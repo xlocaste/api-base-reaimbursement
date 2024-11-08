@@ -52,4 +52,23 @@ class ReimbursementController extends Controller
             'message' => 'Berhasil approval reimbursement'
         ]);
     }
+
+    public function destroy(Reimbursement $reimbursement)
+    {
+        $reimbursement->delete();
+
+        return response()->json([
+            'message' => 'Berhasil menghapus data reimbursement'
+        ]);
+    }
+
+    public function show($reimbursement)
+    {
+        $reimbursement = Reimbursement::findOrFail($reimbursement);
+
+        return (new ReimbursementResource($reimbursement))->additional([
+            'message' => 'Data reimbursement berhasil di dapatkan'
+        ]);
+    }
+
 }

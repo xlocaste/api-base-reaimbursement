@@ -15,6 +15,8 @@ Route::prefix('/')->middleware('auth:sanctum')->group(function() {
         Route::get('/', [ReimbursementController::class, 'index']);
         Route::post('/', [ReimbursementController::class, 'store']);
         Route::put('/{reimbursement}', [ReimbursementController::class, 'update']);
+        Route::delete('/{reimbursement}', [ReimbursementController::class, 'destroy']);
+        Route::get('/{reimbursement}', [ReimbursementController::class, 'show']);
     });
 });
 
