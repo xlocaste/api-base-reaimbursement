@@ -25,13 +25,12 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id'=>'required',
             'tanggal'=>'required',
             'kategori'=>['required', new Enum(Kategori::class)],
             'deskripsi'=>'nullable',
             'jumlah'=>'required',
             'status'=>['required', new Enum(Status::class)],
-            'tanggal_approval'=>'required',
+            'tanggal_approval'=>['nullable', 'date'],
             'approval_by'=>'nullable',
         ];
     }
