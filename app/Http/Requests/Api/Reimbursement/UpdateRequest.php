@@ -25,13 +25,12 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id'=>'required',
-            'tanggal'=>'required',
-            'kategori'=>['required', new Enum(Kategori::class)],
+            'tanggal'=>'nullable',
+            'kategori'=>['nullable', new Enum(Kategori::class)],
             'deskripsi'=>'nullable',
-            'jumlah'=>'required',
+            'jumlah'=>'nullable',
             'status'=>['required', new Enum(Status::class)],
-            'tanggal_approval'=>'required',
+            'tanggal_approval'=>'nullable',
             'approval_by'=>'nullable',
         ];
     }

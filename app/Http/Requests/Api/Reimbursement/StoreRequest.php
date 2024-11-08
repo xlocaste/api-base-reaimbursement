@@ -29,7 +29,7 @@ class StoreRequest extends FormRequest
             'kategori'=>['required', new Enum(Kategori::class)],
             'deskripsi'=>'nullable',
             'jumlah'=>'required',
-            'status'=>['required', new Enum(Status::class)],
+            'status'=>['nullable', new Enum(Status::class)],
             'tanggal_approval'=>['nullable', 'date'],
             'approval_by'=>'nullable',
         ];

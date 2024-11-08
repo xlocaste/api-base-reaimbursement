@@ -14,6 +14,7 @@ Route::prefix('/')->middleware('auth:sanctum')->group(function() {
     Route::prefix('/reimbursement')->name('reimbursement.')->group(function() {
         Route::get('/', [ReimbursementController::class, 'index']);
         Route::post('/', [ReimbursementController::class, 'store']);
+        Route::put('/{reimbursement}', [ReimbursementController::class, 'update']);
     });
 });
 
