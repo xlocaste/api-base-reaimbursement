@@ -13,13 +13,13 @@ deployment:
     - /bin/cp -R routes $DEPLOYPATH
     - /bin/cp -R storage $DEPLOYPATH
     - /bin/cp -R tests $DEPLOYPATH
-    - /bin/cp -R .env $DEPLOYPATH
-    - /bin/cp -R .gitattributes $DEPLOYPATH
-    - /bin/cp -R .gitignore $DEPLOYPATH
-    - /bin/cp -R aritsan $DEPLOYPATH
-    - /bin/cp -R composer.json $DEPLOYPATH
-    - /bin/cp -R composer.lock $DEPLOYPATH
-    - /bin/cp -R phpunit.xml $DEPLOYPATH
-    - /bin/cp -R phpunit.postcss.config.js $DEPLOYPATH
-    - /bin/cp -R README.md $DEPLOYPATH
-    - /bin/cp -R tailwind.config.js $DEPLOYPATH
+    - /bin/cp .env $DEPLOYPATH
+    - /bin/cp .gitattributes $DEPLOYPATH
+    - /bin/cp .gitignore $DEPLOYPATH
+    - /bin/cp aritsan $DEPLOYPATH
+    - /bin/cp composer.json $DEPLOYPATH
+    - /bin/cp composer.lock $DEPLOYPATH
+    - /bin/cp phpunit.xml $DEPLOYPATH
+    - /bin/cp phpunit.postcss.config.js $DEPLOYPATH
+    - /bin/cp README.md $DEPLOYPATH
+    - /bin/cp tailwind.config.js $DEPLOYPATH
