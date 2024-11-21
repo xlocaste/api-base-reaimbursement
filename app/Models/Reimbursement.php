@@ -26,4 +26,9 @@ class Reimbursement extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function approvalBy()
+    {
+        return $this->belongsTo(User::class, 'approval_by');
+    }
 }

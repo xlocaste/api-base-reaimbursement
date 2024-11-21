@@ -28,6 +28,7 @@ class ReimbursementResource extends JsonResource
             'updated_at' => $this -> updated_at,
 
             'user' => new UserResource($this->whenLoaded('user')),
+            'approvalBy' => new UserResource($this->whenLoaded('approvalBy')),
         ];
     }
 }

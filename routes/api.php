@@ -10,7 +10,7 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth:sanctum');
 
-Route::prefix('/')->middleware('auth:sanctum')->group(function() {
+// Route::prefix('/')->middleware('auth:sanctum')->group(function() {
     Route::prefix('/reimbursement')->name('reimbursement.')->group(function() {
         Route::get('/', [ReimbursementController::class, 'index']);
         Route::post('/', [ReimbursementController::class, 'store']);
@@ -18,7 +18,7 @@ Route::prefix('/')->middleware('auth:sanctum')->group(function() {
         Route::delete('/{reimbursement}', [ReimbursementController::class, 'destroy']);
         Route::get('/{reimbursement}', [ReimbursementController::class, 'show']);
     });
-});
+// });
 
 Route::get('/user', function (Request $request) {
     return $request->user();

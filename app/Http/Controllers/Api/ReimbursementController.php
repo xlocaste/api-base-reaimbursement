@@ -14,7 +14,7 @@ class ReimbursementController extends Controller
 {
     public function index()
     {
-        $reimbursements = Reimbursement::with('user')->get();
+        $reimbursements = Reimbursement::with('user', 'approvalBy')->get();
 
         return ReimbursementResource::collection($reimbursements);
     }
