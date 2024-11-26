@@ -16,5 +16,4 @@ class RoleMiddleware
 
         return response()->json(['message' => 'Unauthorized'], 403);
     }
-
 }

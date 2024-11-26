@@ -12,14 +12,11 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->midd
 
 Route::prefix('/')->middleware('auth:sanctum', 'admin' )->group(function() {
     Route::prefix('/reimbursement')->name('reimbursement.')->group(function() {
-        Route::get('/', [ReimbursementController::class, 'index']);
-        Route::post('/', [ReimbursementController::class, 'store']);
         Route::put('/{reimbursement}', [ReimbursementController::class, 'update']);
         Route::delete('/{reimbursement}', [ReimbursementController::class, 'destroy']);
-        Route::get('/{reimbursement}', [ReimbursementController::class, 'show']);
     });
 });
-Route::prefix('/')->middleware('auth:sanctum' )->group(function() {
+Route::prefix('/')->middleware('auth:sanctum')->group(function() {
     Route::prefix('/reimbursement')->name('reimbursement.')->group(function() {
         Route::get('/', [ReimbursementController::class, 'index']);
         Route::post('/', [ReimbursementController::class, 'store']);
@@ -27,6 +24,6 @@ Route::prefix('/')->middleware('auth:sanctum' )->group(function() {
     });
 });
 
-Route::get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-})->middleware('auth:sanctum');
+});
