@@ -10,7 +10,7 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->middleware('auth:sanctum');
 
-Route::prefix('/')->middleware('auth:sanctum', 'admin' )->group(function() {
+Route::prefix('/')->middleware('auth:sanctum', 'role:admin' )->group(function() {
     Route::prefix('/reimbursement')->name('reimbursement.')->group(function() {
         Route::put('/{reimbursement}', [ReimbursementController::class, 'update']);
         Route::delete('/{reimbursement}', [ReimbursementController::class, 'destroy']);
